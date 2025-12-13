@@ -7,7 +7,7 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7.Test
         [TestMethod]
         public void TestMethod1()
         {
-            string path = @"C:\Temp\InPutDataFileTask7V7.csv";
+            string path = @"C:\Task7\InPutDataFileTask7V7.csv";
             FileInfo fileinfo = new FileInfo(path);
             bool fileExists = fileinfo.Exists;
             bool wait = true;

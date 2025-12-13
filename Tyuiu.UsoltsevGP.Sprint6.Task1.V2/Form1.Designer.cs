@@ -146,6 +146,7 @@
             // 
             // textBox6
             // 
+            textBox6.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             textBox6.Location = new Point(497, 96);
             textBox6.Multiline = true;
             textBox6.Name = "textBox6";
