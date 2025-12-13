@@ -71,17 +71,14 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
                     string line = reader.ReadLine();
                     if (string.IsNullOrWhiteSpace(line)) continue;
 
-                    // Разделяем строку по точке с запятой
                     string[] values = line.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries)
                                           .Select(v => v.Trim())
                                           .ToArray();
 
                     if (values.Length == 0) continue;
 
-                    // Добавляем строку в матрицу
                     matrix.Add(new List<string>(values));
 
-                    // Обновляем максимальное количество столбцов
                     if (values.Length > maxColumns)
                         maxColumns = values.Length;
 
@@ -89,14 +86,12 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
                 }
             }
 
-            // Создаем столбцы в DataTable
             for (int i = 0; i < maxColumns; i++)
             {
                 inputDataTable.Columns.Add($"Col{i}", typeof(string));
                 outputDataTable.Columns.Add($"Col{i}", typeof(string));
             }
 
-            // Заполняем DataTable данными матрицы
             foreach (var row in matrix)
             {
                 DataRow inputRow = inputDataTable.NewRow();
@@ -125,7 +120,6 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
         {
             try
             {
-                // Копируем данные из input в output
                 outputDataTable.Clear();
                 foreach (DataRow row in inputDataTable.Rows)
                 {
@@ -137,18 +131,15 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
                     outputDataTable.Rows.Add(newRow);
                 }
 
-                // Проверяем, существует ли пятая строка (индекс 4, так как отсчет с 0)
                 if (outputDataTable.Rows.Count >= 5)
                 {
                     DataRow fifthRow = outputDataTable.Rows[4];
 
-                    // Обрабатываем каждую ячейку в пятой строке
                     for (int i = 0; i < outputDataTable.Columns.Count; i++)
                     {
                         string cellValue = fifthRow[i].ToString();
                         if (int.TryParse(cellValue, out int value))
                         {
-                            // Проверяем, является ли значение нечетным
                             if (value % 2 != 0)
                             {
                                 fifthRow[i] = "66";
@@ -171,26 +162,20 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
 
         private void FormatMatrixDisplay()
         {
-            // Настройка внешнего вида DataGridView для матрицы
             foreach (DataGridView dgv in new[] { dataGridViewIn, dataGridViewOut })
             {
-                // Убираем заголовки строк
                 dgv.RowHeadersVisible = false;
 
-                // Настраиваем заголовки столбцов
                 dgv.ColumnHeadersHeight = 30;
                 dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
-                // Настраиваем ячейки
                 dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgv.DefaultCellStyle.Font = new Font("Consolas", 10);
                 dgv.RowTemplate.Height = 25;
 
-                // Автоподбор ширины столбцов
                 dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-                // Добавляем тонкие границы
                 dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single;
                 dgv.GridColor = Color.LightGray;
             }
@@ -238,7 +223,6 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
                         if (!string.IsNullOrEmpty(value))
                             values.Add(value);
                     }
-                    // Сохраняем как CSV с точкой с запятой
                     writer.WriteLine(string.Join(";", values));
                 }
             }
@@ -260,7 +244,6 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
             }
         }
 
-        // Метод для создания тестового файла (опционально)
         private void CreateTestFile()
         {
             string testData = @"3;3;14;2;3;0;4
