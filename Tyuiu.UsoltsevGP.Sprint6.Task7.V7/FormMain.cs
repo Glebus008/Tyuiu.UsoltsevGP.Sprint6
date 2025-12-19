@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         private DataTable inputDataTable;
         private DataTable outputDataTable;
 
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
             InitializeDataGridViews();
