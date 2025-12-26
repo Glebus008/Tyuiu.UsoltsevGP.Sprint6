@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Tyuiu.UsoltsevGP.Sprint6.Task7.V7.Lib;
 namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
 {
     public partial class FormMain : Form
@@ -27,7 +27,7 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
             inputDataTable = new DataTable();
             outputDataTable = new DataTable();
 
-            dataGridViewIn.DataSource = inputDataTable;
+            dataGridView1.DataSource = inputDataTable;
             dataGridViewOut.DataSource = outputDataTable;
         }
 
@@ -162,7 +162,7 @@ namespace Tyuiu.UsoltsevGP.Sprint6.Task7.V7
 
         private void FormatMatrixDisplay()
         {
-            foreach (DataGridView dgv in new[] { dataGridViewIn, dataGridViewOut })
+            foreach (DataGridView dgv in new[] { dataGridView1, dataGridViewOut })
             {
                 dgv.RowHeadersVisible = false;
 

@@ -34,10 +34,10 @@
             btnShowInfo = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
-            splitter1 = new Splitter();
-            panel3 = new Panel();
             groupBoxInput = new GroupBox();
             dataGridView1 = new DataGridView();
+            splitter1 = new Splitter();
+            panel3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOut).BeginInit();
             groupBoxOutput.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -131,6 +131,7 @@
             // 
             // btnShowInfo
             // 
+            btnShowInfo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnShowInfo.Image = (Image)resources.GetObject("btnShowInfo.Image");
             btnShowInfo.Location = new Point(857, 10);
             btnShowInfo.Margin = new Padding(4, 3, 4, 3);
@@ -157,23 +158,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(484, 388);
             panel2.TabIndex = 11;
-            // 
-            // splitter1
-            // 
-            splitter1.BackColor = SystemColors.ActiveCaption;
-            splitter1.Location = new Point(484, 190);
-            splitter1.Name = "splitter1";
-            splitter1.Size = new Size(3, 388);
-            splitter1.TabIndex = 12;
-            splitter1.TabStop = false;
-            // 
-            // panel3
-            // 
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 190);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(955, 388);
-            panel3.TabIndex = 13;
             // 
             // groupBoxInput
             // 
@@ -204,6 +188,23 @@
             dataGridView1.Size = new Size(476, 366);
             dataGridView1.TabIndex = 4;
             // 
+            // splitter1
+            // 
+            splitter1.BackColor = SystemColors.ActiveCaption;
+            splitter1.Location = new Point(484, 190);
+            splitter1.Name = "splitter1";
+            splitter1.Size = new Size(3, 388);
+            splitter1.TabIndex = 12;
+            splitter1.TabStop = false;
+            // 
+            // panel3
+            // 
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 190);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(955, 388);
+            panel3.TabIndex = 13;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -220,7 +221,9 @@
             Controls.Add(panel3);
             Controls.Add(panel1);
             Margin = new Padding(4, 3, 4, 3);
+            MinimumSize = new Size(971, 617);
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Спринт 6 | Таск 7 | Вариант 7 | Усольцев Г. П.";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewOut).EndInit();
