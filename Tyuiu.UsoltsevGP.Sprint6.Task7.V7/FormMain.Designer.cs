@@ -121,11 +121,12 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(6, 20);
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Location = new Point(3, 19);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(841, 60);
+            textBox1.Size = new Size(885, 64);
             textBox1.TabIndex = 0;
             textBox1.Text = resources.GetString("textBox1.Text");
             // 
